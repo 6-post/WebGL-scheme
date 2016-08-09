@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>WebGL-scheme</title>
+    <link rel="stylesheet" href="lib/leaflet.css" />
+    <script type="text/javascript" src="lib/leaflet-src.js"></script>
+    <style>
+        .map{ height: calc(100vh - 70px); }
+        .leaflet-control a {display: none}
+    </style>
+</head>
+<body>
+<h3>Пример схемы с tile, картинка "01 Геоподоснова A0_600dpi.png", zoom 5x</h3>
+
+<div id="map" class="map"></div>
+
+<script>
+    var map = L.map('map').setView([50, 0], 3);
+
+    L.tileLayer('{z}/{x}_{y}.png',{
+        minZoom: 3,
+        maxZoom: 7,
+        attribution: '',
+        tms: false
+    }).addTo(map);
+</script>
+</body>
+</html>
